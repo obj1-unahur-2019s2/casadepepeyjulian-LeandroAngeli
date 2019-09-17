@@ -27,3 +27,28 @@ object plancha {
 	method esComida() { return false }
 	method esElectrodomestico() { return true }	
 }
+
+object kiloMila {
+	var property precio = 200
+	
+	/*var property sirve como getter y como setter.
+	 * podes consultarlo como kiloMila.precio() y va a dar como resultado 200
+	 podes settear nuevo precio poniendo kilo.Mila(320) y el precio va a cambiarse por 320
+	 * la proxima vez que se quiere saber el precio
+	 * kiloMila.preco() da como respuesta 320
+	  */
+}
+
+object packComida {
+	var plato
+	
+	method configurar(unPlato) {
+		plato = unPlato
+	}
+	
+	method precio() {
+		return plato.precio()
+	}
+	
+}
+	 
