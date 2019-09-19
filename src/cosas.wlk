@@ -29,7 +29,7 @@ object plancha {
 }
 
 object kiloMila {
-	var property precio = 200
+	var property precio = 260
 	
 	/*var property sirve como getter y como setter.
 	 * podes consultarlo como kiloMila.precio() y va a dar como resultado 200
@@ -39,16 +39,67 @@ object kiloMila {
 	  */
 }
 
+object botellaTomate {
+	var property precio = 90 
+}
+
+
+object microondas {
+	
+	method precio() { return 4200 }
+}
+
+
+object kiloDeCebollas{
+	
+	method precio () {return 25}
+}
+
+
+object compu {
+	var dolar
+	
+	method cotizacion(dolarActual) {
+		dolar = dolarActual
+	}
+	method precio () {return 500 * dolar}
+}
+
 object packComida {
 	var plato
+	var aderezo
+
 	
-	method configurar(unPlato) {
+	method configurarAderezo(aderezoNuevo){
+		aderezo = aderezoNuevo
+	}
+	
+	method configurarPlato(unPlato) {
 		plato = unPlato
 	}
 	
 	method precio() {
-		return plato.precio()
+		return plato.precio() +  aderezo.precio()
 	}
+	
+}
+	 
+
+object packRegalo {
+	var componentes = []
+	
+	method precio() {
+		return componentes.sum({ com => com.precio() })*0.8
+	}
+	
+	method esComida() {
+		return componentes.all({cosa => cosa.esComida()})
+	}
+	
+	method esElectrodomestico() {
+		return componentes.any({cosa => cosa.esElectrodomestico()})
+	}
+	
 	
 }
 	 
